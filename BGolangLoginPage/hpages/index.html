@@ -1,0 +1,149 @@
+<!DOCTYPE HTML>
+<html>
+    <section>
+    <body>
+      
+      <div class="login-box">
+    <h2>Login into your account</h2>
+    <form method="post" action="/login">
+        <label for="name"></label>
+        <input type="text" placeholder="Username" id="name" name="name"><br>
+        <label for="password"></label>
+        <input  type="password" placeholder="Password" id="password" name="password"> <br>
+        <br>
+        <button type="subimt">Login</button>
+    </form>
+       
+        </div>
+      <br>
+    <nav class="myNav">
+        <ul>
+            <li><a href="">Don't have an account?</a>
+              <ul>
+                <li><a href="/register.html">Sing Up</a></li>
+                <li><a href="">Login with Google Account</a></li>
+              </ul>
+          </li>
+        </ul>
+      </nav>
+      
+    </body>
+       </section>
+      
+</html>
+<style>
+  .login-box{
+    font-size: large;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+  }
+  .login-box input{
+    border:none;
+    outline:none;
+    font-size:20px;
+    text-align: center;
+  }
+  
+button{
+  width:30%;
+  position:absolute;
+  left:70%;
+  background:none;
+  border: 2px solid white;
+  padding: 4px;
+  cursor:pointer;
+  font-size: 18px;
+  font-family: "Lucida Console", Courier, monospace;
+}
+
+label{
+  color:black;
+  font-family: "Verdana", "Geneva", "sans-serif";
+  font-size:30px;
+}
+body {
+
+  width:100%;
+  height:100vh;
+    background: linear-gradient(-45deg, #E73C7E, #23A6D5,#E73C7E);
+    background-size:300% 300%; 
+    position:relative;
+    animation:change 10s ease-in-out infinite;
+}
+  @keyframes change{
+    0%{
+      background-position: 0 50%;
+    }
+    50%{
+      background-position: 100% 50%;
+    }
+    100%{
+      background-position: 0 50%;
+    }
+  }
+.myNav ul {
+  margin:0;
+  padding:0;
+  list-style: none;
+
+}
+.myNav >ul {
+  display:flex;
+  flex-direction:column;
+
+}
+ul a{
+    display: block;
+    padding: .5rem;
+    background: #262626;
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+  }
+
+ .myNav a:hover,
+ .myNav a:focus 
+  {
+    background:crimson;
+  }
+ .myNav >ul ul a{
+    padding-left: 3rem;
+    /*flex-direction: column;*/
+  }
+@media (min-width: 500px){
+  .myNav ul{
+    flex-direction:row;
+  }
+
+  .myNav >ul ul{
+    position:relative;
+    display:none;
+    transition: .4s ease opacity;
+    /*display:none;*/
+    
+  }
+  .myNav >ul>li:hover ul,
+  .myNav >ul>li:focus-within ul{
+    display:block; 
+    position:absolute;
+  }
+ 
+  .myNav > li {
+    position: relative;
+   flex:1; 
+  }
+  .myNav >ul>li:hover ul,
+  .myNav >ul>li:focus-within ul{
+    display:block; 
+  }
+
+}
+  h2{
+      font-family: "Verdana", "Geneva", "sans-serif";
+      font-size:45px;
+      border-bottom: 2px solid #fff;
+      
+  }
+</style>

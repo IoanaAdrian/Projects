@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<body>
+<div class="dotare">
+    <h1>Register</h1>
+    <br>
+    <form method="post" action="/register">
+
+        <label for="name"></label>
+        <input type="text" placeholder="Username" id="username" name="username"> <br>
+
+        <label for="name"></label>
+        <input type="text" id="email" placeholder="Email" name="email"><br>
+
+        <label for="password"></label>
+        <input type="password" placeholder="Password" id="password" name="password"><br>
+
+        <label for="confirmPassword"></label>
+        <input type="password" 
+               placeholder="Confirm Password" id="confirmPassword" name="confirmPassword"><br> <br>
+
+        <button type="submit">Register</button>
+
+    </form>
+</div>
+
+<style>
+.dotare{
+    font-size: large;
+    position:absolute;
+    border:none;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+  }
+input{
+    border:none;
+    outline:none;
+    font-size:20px;
+    text-align: center;
+  }
+  body {
+
+  width:100%;
+  height:100vh;
+    background: linear-gradient(-45deg, #E73C7E, #23A6D5,#E73C7E);
+    background-size:300% 300%; 
+    position:relative;
+    animation:change 10s ease-in-out infinite;
+}
+  @keyframes change{
+    0%{
+      background-position: 0 50%;
+    }
+    50%{
+      background-position: 100% 50%;
+    }
+    100%{
+      background-position: 0 50%;
+    }
+  }
+  button{
+  width:40%;
+  position:absolute;
+  left:70%;
+  background:none;
+  border: 2px solid white;
+  padding: 4px;
+  cursor:pointer;
+  font-size: 18px;
+  font-family: "Lucida Console", Courier, monospace;
+}
+  h1{
+    text-align:center;
+    font-family: "Verdana", "Geneva", "sans-serif";
+      font-size:45px;
+      border-bottom: 2px solid #fff;
+      
+  }
+</style>    
+  </body>

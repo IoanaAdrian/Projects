@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html>
+  <body>
+<div class="log-form">
+    <h1>Hello, %s, this is your profile</h1>
+  
+  <br>
+  <br>
+    <b>First Name: %s</b>
+  <br>
+  <form action="/editfirstname" method="post">
+        <input type="text" placeholder="Enter here the new First Name" id="EditH" name="EditH" >
+    <input type="submit" value="Edit">
+  </form>
+  <br>
+    <b>Last Name: %s</b>
+    <br>
+  <form action="/editlastname" method="post">
+        <input type="text" placeholder="Enter here the new Last Name" id="EditL" name="EditL" >
+    <input type="submit" value="Edit">
+    </form>
+  <br>
+    <b>Country: %s</b>
+    <br>
+  <form action="/editcountry" method="post">
+        <input type="text" placeholder="Enter here the new Country" id="EditC" name="EditC" >
+    <input type="submit" value="Edit">
+    </form>
+  <br>
+    <b>City: %s</b>
+  <br>
+  <form action="/editcity" method="post">
+        <input type="text" placeholder="Enter here the new City" id="EditCi" name="EditCi" >
+    <input type="submit" value="Edit">
+    </form>
+  <br>
+    <b>Telephone: %s</b>
+  <br>
+  <form action="/edittelephone" method="post">
+        <input type="text" placeholder="Enter here the new Telephone" id="EditT" name="EditT" >
+    <input type="submit" value="Edit">
+    </form>
+  <br>
+    <b>Adress: %s</b>
+  <br>
+  <form action="/editadress" method="post">
+        <input type="text" placeholder="Enter here the new Adress" id="EditA" name="EditA" >
+    <input type="submit" value="Edit">
+    </form>
+  <br>  
+  <br>
+    <form method="post" action="/logout">
+        <button type="submit">Logout</button>
+    </form>
+    </div>
+    <style>
+      input{
+        width:200px;
+      }
+      body {
+
+    background: #D8BFD8;
+
+}
+     h1{
+       position:relative;
+       border-bottom: 2px solid white;
+      font-family:"Verdana", "Geneva", "sans-serif";
+      font-size:45px;
+       
+      
+  } 
+      button{
+  
+  background:none;
+  border: 2px solid white;
+  padding: 4px;
+  cursor:pointer;
+  font-size: 18px;
+  font-family: "Lucida Console", Courier, monospace;
+}
+b{
+      /*font-family: 'Arial';*/
+      font-size:25px;
+      
+  }
+    </style>
+   </body>
+</html>

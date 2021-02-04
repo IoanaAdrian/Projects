@@ -1,0 +1,189 @@
+<!DOCTYPE HTML>
+<html>
+    <section>
+    <body>
+      <form method="post" action="/arhiva">
+     <button
+             style="width:10%">Arhivă</button>
+        </form>
+      <div class="login-box">
+    <h2>Postează o sursă</h2>
+    
+        <label for="CodeTitle">1)</label>
+        <form name="myForm" method="post"  onsubmit="return validateForm()" action="/trimite"> <input type="text" placeholder="NPA/NS" id="CodeTitle" name="CodeTitle"> 
+              <div class="bttn"><button type="text">?</button></div>
+      
+      <br>
+          <br>
+      <div class="btn2">
+        <label for="Code">2)</label>
+        <textarea placeholder="Inserează sursa" rows="15" cols="40" id="CodeSourcee" name="CodeSourcee"></textarea>
+        </div>
+      
+        <br>
+   <button type="subimt">Trimite</button>
+    
+        <div class="plm">NPA- Nume, Prenume Autor</div>
+        <div class="plm">NS- Nume sursă</div>
+        </div>
+          </form>
+      <br>
+      
+        
+    </body>
+       </section>
+      
+</html>
+<style>
+  form{
+    display:inline;
+  }
+  .bttn{
+    display:inline;
+  }
+  
+  .bttn button{
+    position:relative;
+    width:8%;
+    left:2%; 
+  }
+  .bttn:hover ~.plm{
+    opacity:1;
+  }
+  
+  
+
+  .login-box{
+    font-size: large;
+    position:absolute;
+    top:50%;
+    left:50%;
+   transform:translate(-50%,-50%);
+  }
+  .plm{
+
+    color:black;
+    font-family:Arial;
+    text-align:center;
+    font-size: 24px;
+    position:relative;
+    opacity:0;
+   transform:translate(100%,-1290%);
+  }
+  
+  .login-box input{
+    width:80%;
+    border:none;
+    outline:none;
+    font-size:20px;
+    text-align: center;
+  }
+   .btn2 textarea{
+     font-size:15px;
+     white-space:nowrap;
+     vertical-align:top;
+     width:80%;
+     resize:none;
+  }
+ 
+
+::placeholder { 
+  font-family:Arial;
+  font-size:20px;
+  text-align:center; 
+}
+  
+ button{
+  width:30%;
+  position:absolute;
+  left:70%;
+  background:none;
+  border: 2px solid white;
+  padding: 4px;
+  cursor:pointer;
+  font-size: 18px;
+  font-family: "Lucida Console", Courier, monospace;
+}
+
+label{
+  color:black;
+  font-family: "Verdana", "Geneva", "sans-serif";
+  font-size:30px;
+}
+body {
+
+  width:99%;
+  height:98vh;
+    background: linear-gradient(-45deg, #cc00cc,#2e5cb8,#00e600);
+    background-size:300% 300%; 
+    position:relative;
+    animation:change 10s ease-in-out infinite;
+}
+  @keyframes change{
+    0%{
+      background-position: 0 50%;
+    }
+    50%{
+      background-position: 100% 50%;
+    }
+    100%{
+      background-position: 0 50%;
+    }
+  }
+  h2{
+      font-family: "Verdana", "Geneva", "sans-serif";
+      font-size:45px;
+      border-bottom: 2px solid #fff;
+      
+  }
+</style>
+<script>
+  function validateForm() {
+  var x = document.forms["myForm"]["CodeTitle"].value;
+  if (x == "") {
+    alert("Nu puteți lăsa titlul sursei gol");
+    return false;
+  }
+
+  var ok=0;
+  var i;
+  var n=x.length;
+  for(i=0; i<n; i++)
+    {
+      if(x[i]==" ")
+      {
+        //Nothing to see here ;)
+        alert("Titlul sursei nu trebuie să aibă spații în el")
+        return false;
+      }
+      if( (x[i]=='/') || (x[i]=='\\') )
+         {
+            ok=1;
+         }
+    }
+  if(ok==0||n<3)
+    {
+      alert("Titlul sursei nu îndeplinește structura cerută (NumePrenume/NumeSursă)")
+      return false;
+    } 
+    var y = document.forms["myForm"]["CodeSourcee"].value;
+    if( (y=="") || (y==" ") )
+      {
+        alert("Nu puteți lăsa sursa codului goală");
+        return false;
+      }
+    var k=0;
+    var m= y.length;
+    for(i=0;i<m;i++)
+      {
+          if((y[i]==" ")||(y[i]=="\n")||(y[i]=="TAB"))
+            {
+                k+=1;
+            }
+      }
+    if( k==m ){
+      alert("Nu puteți lăsa sursa codului goală");
+      return false;
+    }
+  }
+</script>
